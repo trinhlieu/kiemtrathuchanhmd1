@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1600px" height="900px" style="border:1px solid #d3d3d3;">
+</canvas>
+</body>
+<script>
+    class Circle {
+        x;
+        y;
+        radius;
+
+        constructor(x, y, radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+        }
+        getColor() {
+            let red = 0;
+            let blue = 0;
+            let green = 0;
+            return "rgb(" + red + "," + blue + "," + green +")";
+        }
+
+        drawCircle() {
+            let ctx = document.getElementById('myCanvas').getContext('2d');
+            let radius = this.radius;
+            let x = this.x;
+            let y = this.y;
+            let color = this.getColor()
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, 2 * Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+    }
+
+    let  circle = new Circle(10, 10, 100);
+    circle.drawCircle();
+</script>
+</html>

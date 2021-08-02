@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let examPoints = [7,4,5,6,2,1,0,3,9,10];
+    let maxPoints = examPoints[0];
+    function findMax(examP) {
+        for (let i=0; i < examP.length; i++) {
+            if (examP[i]>maxPoints) {
+                maxPoints = examP[i];
+            }
+        }
+            return maxPoints;
+    }
+    maxPoints = findMax(examPoints);
+    document.write('Bai co diem so cao nhat la: '+ maxPoints);
+</script>
+</body>
+</html>
